@@ -1,5 +1,11 @@
 import java.util.Arrays;
 
+/* 
+Problem: To find the maximum and minimum element in array
+Input: 2 3 35 76 102 1
+Output Max: 102 and Min: 1
+*/
+
 public class MaxMin{
 	
   //Method to get maximum element using naive method
@@ -43,7 +49,5 @@ public class MaxMin{
 		System.out.print("Minimum Element " + getMin(array));  
     */
 		
-		
-		
-	}
+   }
 }
