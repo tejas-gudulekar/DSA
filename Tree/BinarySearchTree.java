@@ -13,7 +13,7 @@ class node {
 
 }
 public class BinarySearchTree {
-	int count=0;
+    int count=0;
     node root;
     public void insert(int data) {
         node newNode = new node(data);
@@ -86,16 +86,7 @@ public class BinarySearchTree {
             if (currentNode.data == data) {
 
                 //If the node has two child
-                if (currentNode.left != null && currentNode.right != null) { 
-                	node lMax = getMax(currentNode.left);
-                	node tempNode = currentNode;
-                	currentNode = lMax;
-                	lMax = null;
-                	parentNode.left = currentNode;
-                	currentNode.left = tempNode.left;
-                	currentNode.right = tempNode.right;
-                	 
-                	
+                if (currentNode.left != null && currentNode.right != null) {
                 	return;
                 }
                 //If the node has only one child
