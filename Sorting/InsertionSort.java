@@ -1,7 +1,7 @@
 /*
 In insertion sort, the array is divided in two parts left sorted array and right unsorted array
 In left sorted array, every time a new element is added it is compare with the rightmost element of sorted array
-If it is bigger than the new element and the current comparing index of sorted array is bigger than equal to )
+If it is bigger than the new element and the current comparing index of sorted array is bigger than equal to 0
 The left sorted element is shift one to right;
 and when the while loop stop the index j pointing in sorted array is changed to the key
 */
