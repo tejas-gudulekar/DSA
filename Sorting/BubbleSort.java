@@ -1,5 +1,6 @@
 /* 
 In buuble sort a index is selected and the index value is compare with its next index value
+the bubble index will keep on incrementing as j increments
 At the end of the first iteration the greatest value will be at the end of the array
 */
 
