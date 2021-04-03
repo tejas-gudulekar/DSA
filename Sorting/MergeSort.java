@@ -1,6 +1,7 @@
 
 
 
+
 public class MergeSort {
     void mergeSort(int[] array) {
         int[] helperArray = new int[array.length];
@@ -10,12 +11,15 @@ public class MergeSort {
     void mergeSort(int[] array, int[] helperArray, int leftStart, int rightEnd) {
         if (leftStart < rightEnd) {
             int middle = (leftStart + rightEnd) / 2;
+            System.out.println("Left Divide: " +  leftStart + " "+ middle);
             mergeSort(array, helperArray, leftStart, middle);
+            System.out.println("Right Divide: " +  Integer.toString(middle+1) + " " +  rightEnd);
             mergeSort(array, helperArray, middle + 1, rightEnd);
+            System.out.println("Merge halves: " + leftStart +" "+ middle +" " + rightEnd);
             merge(array, helperArray, leftStart, middle, rightEnd);
 
         }
-    }
+     }
 
     void merge(int[] array, int[] helperArray, int leftStart, int middle, int rightEnd) {
         // TODO Auto-generated method stub
