@@ -5,7 +5,7 @@
  	Input: {2, 5, 1, 99, 45, 23, 36, 0};
  	Output: 0 99
  */
-public class Arrays{
+public class MaxMin{
 	static void MinMax(int[] arr){
 		int min = arr[0];
 		int max = arr[0];
