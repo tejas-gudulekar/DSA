@@ -1,18 +1,18 @@
-/*
-Problem: Printing the array elements in reverse order
-Input : {1,2,3,4,5}
-Output: {5,4,3,2,1}
-*/
 
-public class ReverseArray{
-	static void reverseArray(int[] arr) {
+/*
+ 	Given an Array, we need to print the elements of Array in reverse order
+ 	Input: {2, 5, 1, 99, 45, 23, 36, 0}
+ 	Output: 0 36 23 45 99 1 5 2
+ */
+
+public class Arrays{
+	static void reverseArray(int[] arr){
 		for(int i=arr.length-1;i>=0;i--) {
 			System.out.print(arr[i] + " ");
 		}
 	}
-	public static void main(String[] args) {
-		int[] arr = {12, 35, 1, 10, 34, 1};
-		reverseArray(arr);
-		
-		}
+ public static void main(String[] args) {
+	 int[] arr = {2, 5, 1, 99, 45, 23, 36, 0};
+	 reverseArray(arr);
+	}
 }
