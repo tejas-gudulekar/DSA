@@ -1,29 +1,21 @@
-/*
-To find sum of all elements in an array
-Example: input {1,5,3,2,7} 
-Output: 18 */
 
-public class SumOfAllElements{
-	static int sumOfAllElements(int[] arr) {
-		int total = 0, i =0;
-    
-    //If array contains only one element
-		if(arr.length == 1) {
-			return arr[0];
+/*
+ 	Given an Array of size n, we need to print the sum of all the elements in the array
+ 	Input: {2, 4, 1, 5}
+ 	Output: 12
+ */
+
+public class Arrays{
+	static int sumOfElements(int[] arr) {
+		int sum = 0;
+		for(int i=0;i<arr.length;i++) {
+			sum += arr[i];
 		}
-    else if(arr.length == 0){
-      return 0;
-    }
-    else{
-      while(i<arr.length) {
-        total += arr[i];
-        i++;
-      }
-		return total;
-    }
+		return sum;
 	}
-	public static void main(String[] args) {
-		int[] array  = {7,2,5,72,5,102,84,35,200,1};
-		System.out.print(sumOfAllElements(array));
+ public static void main(String[] args) {
+	 int[] arr = {2, 5, 1, 99, 45, 23, 36, 0};
+	 int sum = sumOfElements(arr);
+	 System.out.println(sum);
 	}
 }
