@@ -7,7 +7,7 @@
 
 import java.util.Arrays;
 
-public class Array{
+public class CountSmaller{
 	  static public int countOfElements(int arr[], int n, int x)
 	    {
 	        int count=0;
