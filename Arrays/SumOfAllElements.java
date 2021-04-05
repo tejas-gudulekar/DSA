@@ -5,7 +5,7 @@
  	Output: 12
  */
 
-public class Arrays{
+public class SumOfAllElements{
 	static int sumOfElements(int[] arr) {
 		int sum = 0;
 		for(int i=0;i<arr.length;i++) {
