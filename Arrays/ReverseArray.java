@@ -5,7 +5,7 @@
  	Output: 0 36 23 45 99 1 5 2
  */
 
-public class Arrays{
+public class ReverseArray{
 	static void reverseArray(int[] arr){
 		for(int i=arr.length-1;i>=0;i--) {
 			System.out.print(arr[i] + " ");
