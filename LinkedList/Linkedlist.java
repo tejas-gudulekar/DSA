@@ -114,6 +114,8 @@ public class Linkedlist{
 			return data;
 		}
 	}
+	
+	//To reverse a complete list
 	void reverseList(Linkedlist l) {
 		node prev = null;
 		node currentNode = l.head;
@@ -129,6 +131,29 @@ public class Linkedlist{
 		currentNode.next = prev;
 		head = currentNode;
 	}
+	
+	//Reverse in group function
+	node reverseInGroup(node head,int k) {
+		node current = head;
+		node prev = null;
+		node next = current.next;
+		int count = 1;
+		while(next!=null && count<k) {
+			count++;
+			current.next = prev;
+			prev = current;
+			current = next;
+			next = current.next;
+		}
+		
+		current.next = prev;
+		if(next!=null) {
+			head.next = reverseInGroup(next,k);
+	
+		}
+		return current;
+	}
+	
 	public static void main(String[] args) {
 		Linkedlist list = new Linkedlist();
 		
