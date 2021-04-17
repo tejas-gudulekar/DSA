@@ -114,6 +114,21 @@ public class Linkedlist{
 			return data;
 		}
 	}
+	void reverseList(Linkedlist l) {
+		node prev = null;
+		node currentNode = l.head;
+		node next = currentNode.next;
+		
+		while(next!=null) {
+			currentNode.next = prev;
+			prev = currentNode;
+			currentNode = next;
+			next = currentNode.next;
+		}
+		
+		currentNode.next = prev;
+		head = currentNode;
+	}
 	public static void main(String[] args) {
 		Linkedlist list = new Linkedlist();
 		
