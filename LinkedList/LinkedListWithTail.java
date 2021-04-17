@@ -1,4 +1,4 @@
-public class LinkedList{
+public class LinkedListWithTail{
 	node head;
 	node tail;
 	int length;
