@@ -1,23 +1,25 @@
 /*
-Implementation of linkedlist with single pointer head
+Implementation of linkedlist with single pointer head with the functions of append, prepend, insert, delete,
+reverse, reverse in k groups, detect loop and remove loop
 */
+
+
 
 class node{
 	int data;
-	node next; //initially null
+	node next; 
 	
-	//setting the data by user defined constructor
 	node(int data){
 		this.data = data;
 	}
-}
+} 
 
 
 public class Linkedlist{
 	node head;
 	int length = 0;
 	
-	 void prepend(int data) {
+	void prepend(int data) {
 		node newNode = new node(data);
 		
 		if(head == null) {
@@ -84,6 +86,7 @@ public class Linkedlist{
 			length++;
 		}
 	}
+	
 	int delete(int pos) {
 		if(pos<0 || pos>length-1) {
 			System.out.println("Invalid index");
@@ -115,24 +118,6 @@ public class Linkedlist{
 		}
 	}
 	
-	//To reverse a complete list
-	void reverseList(Linkedlist l) {
-		node prev = null;
-		node currentNode = l.head;
-		node next = currentNode.next;
-		
-		while(next!=null) {
-			currentNode.next = prev;
-			prev = currentNode;
-			currentNode = next;
-			next = currentNode.next;
-		}
-		
-		currentNode.next = prev;
-		head = currentNode;
-	}
-	
-	//Reverse in group function
 	node reverseInGroup(node head,int k) {
 		node current = head;
 		node prev = null;
@@ -153,28 +138,87 @@ public class Linkedlist{
 		}
 		return current;
 	}
+	void reverseList(Linkedlist l) {
+		node prev = null;
+		node currentNode = l.head;
+		node next = currentNode.next;
+		
+		while(next!=null ) {
+			currentNode.next = prev;
+			prev = currentNode;
+			currentNode = next;
+			next = currentNode.next;
+		}
+		
+		currentNode.next = prev;
+		head = currentNode;
+	}
 	
+	boolean detectLoop(node head) {
+		node slow = head;
+		node fast = head;
+		while(fast!=null && fast.next!=null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			if(fast==slow) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void removeLoop(node head){
+	      
+		if(head==null || head.next == null) return;
+	        node slow = head;
+	        node fast = head;
+	        
+	        while(slow!=null && fast!=null && fast.next!=null){
+	            slow = slow.next;
+	            fast = fast.next.next;
+	             if(slow==fast){
+	            	  break;
+	            }
+	         }
+	        
+	        if(slow==head && slow==fast){
+	            while(fast.next != head){
+	                fast = fast.next;
+	            }
+	            fast.next = null; 
+	            return;
+	        }
+	        else if(slow==fast){
+	            
+	            slow = head;
+	            while(slow.next!=fast.next){
+	                slow = slow.next;
+	                fast = fast.next;
+	            }
+	            
+	            fast.next = null;
+	        }
+	        
+	    }
 	public static void main(String[] args) {
 		Linkedlist list = new Linkedlist();
 		
-		list.append(0);
+		list.append(1);
 		list.append(2);
+		list.append(3);
 		list.append(4);
-		list.append(6);
-		list.prepend(1);
-		list.insert(1, 2);
-		list.insert(0, 2);
-		list.insert(3, 7);
-		list.insert(8, 10);
-		list.delete(0);
-		list.delete(2);
-		list.delete(3);
-		list.delete(5);
+		list.append(5);
+		list.append(6); 
+		//list.reverseList(list);
+//		list.head = list.reverseInGroup(list.head, 2);
+//		list.print();
 		
+		//Input for validating detect loop and remove loop
+		list.head.next.next.next.next.next.next = list.head.next;
+		System.out.println(list.detectLoop(list.head));
+		list.removeLoop(list.head);
+		System.out.println(list.detectLoop(list.head));
 		list.print();
-		System.out.println("lenght: " + list.length);
-		
-		
 	}
 }
 
