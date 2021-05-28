@@ -101,7 +101,7 @@ public class Graph{
 	    Stack<Integer> stack = new Stack<>();
 	    boolean[] visited = new boolean[nodeCount];
 	    stack.push(source);
-  		visited[source] = true';
+  		visited[source] = true;
   		
   		while(!stack.isEmpty()) {
   			int cur = stack.pop();
